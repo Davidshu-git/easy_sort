@@ -67,12 +67,28 @@ void insert_sort(vector<int> &nums, int n) {
     }
 }
 
+//冒泡排序经典写法
+void bubble_sort(vector<int> &nums, int n) {
+    for(int i = 1; i < n; ++i) {
+        int swap_flag = false;
+        for(int j = 1; j < n - i + 1; ++j) {
+            if(nums[j] < nums[j - 1]) {
+                swap(nums[j], nums[j - 1]);
+                swap_flag = true;
+            }
+        }
+        if(!swap_flag) {
+            break;
+        }
+    }
+}
+
 int main()
 {
     vector<int> nums = {1, 3, 5, 7, 2, 6, 4, 8, 9, 2, 8, 
     7, 6, 0, 3, 5, 9, 4, 1, 0};
     vector<int>temp(nums.size());
-    insert_sort(nums, nums.size());
+    bubble_sort(nums, nums.size());
     for(const auto &element : nums) {
         cout << element << " ";
     }
