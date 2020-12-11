@@ -57,13 +57,22 @@ void merge_sort(vector<int> &nums, int left, int right, vector<int> &temp) {
     }
 }
 
-//
+//插入排序经典写法
+using std::swap;
+void insert_sort(vector<int> &nums, int n) {
+    for(int i = 0; i < n; ++i) {
+        for(int j = i; j > 0 && nums[j] < nums[j - 1]; --j) {
+            swap(nums[j], nums[j - 1]);
+        }
+    }
+}
+
 int main()
 {
     vector<int> nums = {1, 3, 5, 7, 2, 6, 4, 8, 9, 2, 8, 
     7, 6, 0, 3, 5, 9, 4, 1, 0};
     vector<int>temp(nums.size());
-    merge_sort(nums, 0, nums.size(), temp);
+    insert_sort(nums, nums.size());
     for(const auto &element : nums) {
         cout << element << " ";
     }
