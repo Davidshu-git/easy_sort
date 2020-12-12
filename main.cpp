@@ -83,12 +83,26 @@ void bubble_sort(vector<int> &nums, int n) {
     }
 }
 
+//选择排序经典写法
+void selection_sort(vector<int> &nums, int n) {
+    int selection_index = 0;
+    for (int i = 0; i < n - 1; ++i) {
+       selection_index = i;
+       for(int j = i + 1; j < n; ++j) {
+           if(nums[j] < nums[selection_index]) {
+               selection_index = j;
+           }
+       } 
+       swap(nums[i], nums[selection_index]);
+    }
+}
+
 int main()
 {
     vector<int> nums = {1, 3, 5, 7, 2, 6, 4, 8, 9, 2, 8, 
     7, 6, 0, 3, 5, 9, 4, 1, 0};
     vector<int>temp(nums.size());
-    bubble_sort(nums, nums.size());
+    selection_sort(nums, nums.size());
     for(const auto &element : nums) {
         cout << element << " ";
     }
