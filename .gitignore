@@ -1,2 +1,5 @@
 # vscode文件
 /.vscode
+
+# cmake
+/build
