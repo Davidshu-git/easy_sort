@@ -1,5 +1,3 @@
-# vscode文件
-/.vscode
-
 # cmake
 /build
+.DS_Store
