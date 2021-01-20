@@ -1,20 +1,14 @@
 {
+	"name": "sort_dev",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 	"extensions": [
-		// download error suggest install from vsix
-		// "ms-vscode.cpptools",
 		"eamodio.gitlens",
 		"ms-vscode.cmake-tools",
-	],
-	"remoteUser": "vscode",
-	"build": {
-		"dockerfile": "Dockerfile",
-	},
-	"runArgs": [
-		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined"
+		"yzhang.markdown-all-in-one"
 	]
 }
