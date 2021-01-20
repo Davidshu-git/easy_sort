@@ -1,2 +1,2 @@
 # 添加预定义好的image
-FROM cpp_dev_full
+FROM 807172378/cpp_dev_m1:1.0
