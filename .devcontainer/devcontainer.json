@@ -3,7 +3,8 @@
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 	"extensions": [
-		"ms-vscode.cpptools",
+		// download error suggest install from vsix
+		// "ms-vscode.cpptools",
 		"eamodio.gitlens",
 		"ms-vscode.cmake-tools",
 	],
