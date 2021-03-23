@@ -7,7 +7,7 @@ using std::endl;
 using std::vector;
 using std::string;
 
-//快速排序经典写法
+//快速排序经典写法：时间复杂度(nlogn->n^2，平均nlogn)、空间复杂度(logn->n，平均logn)、不稳定
 void quick_sort(vector<int> &nums, int left, int right) {
     if(left + 1 >= right) {
         return;
@@ -32,7 +32,7 @@ void quick_sort(vector<int> &nums, int left, int right) {
     quick_sort(nums, first + 1, right);
 }
 
-//归并排序经典写法
+//归并排序经典写法：时间复杂度(nlogn)、空间复杂度(n)、稳定
 void merge_sort(vector<int> &nums, int left, int right, vector<int> &temp) {
     if(left + 1 >= right) {
         return;
@@ -57,7 +57,7 @@ void merge_sort(vector<int> &nums, int left, int right, vector<int> &temp) {
     }
 }
 
-//插入排序经典写法
+//插入排序经典写法：时间复杂度(n->n^2，平均n^2)、空间复杂度(1)、稳定
 using std::swap;
 void insert_sort(vector<int> &nums, int n) {
     for(int i = 0; i < n; ++i) {
@@ -67,7 +67,7 @@ void insert_sort(vector<int> &nums, int n) {
     }
 }
 
-//冒泡排序经典写法
+//冒泡排序经典写法：时间复杂度(n->n^2，平均n^2)、空间复杂度(1)、稳定
 void bubble_sort(vector<int> &nums, int n) {
     for(int i = 1; i < n; ++i) {
         int swap_flag = false;
@@ -83,7 +83,7 @@ void bubble_sort(vector<int> &nums, int n) {
     }
 }
 
-//选择排序经典写法
+//选择排序经典写法：时间复杂度(n^2)、空间复杂度(1)、不稳定
 void selection_sort(vector<int> &nums, int n) {
     int selection_index = 0;
     for (int i = 0; i < n - 1; ++i) {
@@ -101,8 +101,7 @@ int main()
 {
     vector<int> nums = {1, 3, 5, 7, 2, 6, 4, 8, 9, 2, 8, 
     7, 6, 0, 3, 5, 9, 4, 1, 0};
-    vector<int>temp(nums.size());
-    selection_sort(nums, nums.size());
+    quick_sort(nums, 0, nums.size());
     for(const auto &element : nums) {
         cout << element << " ";
     }
