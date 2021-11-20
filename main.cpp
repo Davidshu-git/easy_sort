@@ -70,7 +70,7 @@ void insert_sort(vector<int> &nums, int n) {
 //冒泡排序经典写法：时间复杂度(n->n^2，平均n^2)、空间复杂度(1)、稳定
 void bubble_sort(vector<int> &nums, int n) {
     for(int i = 1; i < n; ++i) {
-        int swap_flag = false;
+        bool swap_flag = false;
         for(int j = 1; j < n - i + 1; ++j) {
             if(nums[j] < nums[j - 1]) {
                 swap(nums[j], nums[j - 1]);
